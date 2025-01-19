@@ -11,7 +11,8 @@
 1. Склонируйте репозиторий:
 2. Запустите контейнеры: docker-compose up --build -d
 3. Необходимо перейти в СУБД и создать таблицу orders внутри БД order_db
-create table orders
+```sql
+ create table orders
 (
     id         varchar(255)                             not null primary key,
     items      json                                     not null,
@@ -19,6 +20,7 @@ create table orders
     created_at datetime                                 not null,
     updated_at datetime   default '1900-01-01 00:00:00' null
 );
+```
 Данные по подлюкчению к БД лежат в config.php
 
 После запуска контейнеров и создания таблицы вы сможете получить доступ к API по адресу: http://localhost:8080.
